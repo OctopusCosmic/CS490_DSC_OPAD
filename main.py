@@ -221,7 +221,8 @@ def main():
     v = np.array([[1.0000, 0.0595, -0.1429],
                   [0.0588, 1.0000, -0.1324],
                   [-0.2277, -0.0297, 1.0000]])
-    alpha = 0.05
+    epsilons = [0, .05, .1, .15, .2, .25, .3]
+    alpha = epsilons[1]
     y, x, y_new, x_new = Preprocess.preprocess_image(img_filename, v, alpha)
 
     # show_np_array_as_jpg(y, 1)
@@ -238,7 +239,6 @@ def main():
         batch_size=1, shuffle=True)
     '''
 
-    epsilons = [0, .05, .1, .15, .2, .25, .3]
     use_cuda = True
     # Decide whether to use GPU or CPU
 
